@@ -50,7 +50,7 @@ class EvilCircle extends Shape {
 }
 
 
-//小球方法
+//小球的方法
 Ball.prototype.draw = function() {
   ctx.beginPath();
   ctx.fillStyle = this.color;
@@ -89,7 +89,7 @@ Ball.prototype.collisionDetect = function() {
 }
 
 
-//大球方法
+//大球的方法
 EvilCircle.prototype.draw = function() {
   ctx.beginPath();
   ctx.lineWidth = 5;
