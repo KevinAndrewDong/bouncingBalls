@@ -1,12 +1,10 @@
 //设置剩余小球
-
 const para = document.querySelector('.score');
 let count = 0;
 
 
 
 // 设置画布
-
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
@@ -24,6 +22,7 @@ function randomColor() {
       random(0, 255) + ')';
 }
 
+//定义构造器Shape(), Ball(), EvilCircle()
 class Shape {
   constructor(x, y, velX, velY, exists) {
     this.x = x;
@@ -90,7 +89,7 @@ Ball.prototype.collisionDetect = function() {
 }
 
 
-//恶魔圈方法
+//大球方法
 EvilCircle.prototype.draw = function() {
   ctx.beginPath();
   ctx.lineWidth = 5;
@@ -131,6 +130,7 @@ EvilCircle.prototype.collisionDetect = function() {
   }
 }
 
+//键盘按键监测
 EvilCircle.prototype.setControls = function() {
   window.onkeydown = e => {
     switch(e.key) {
@@ -158,7 +158,7 @@ EvilCircle.prototype.setControls = function() {
   };
 };
 
-//生成小球和恶魔圈
+//生成小球和大球
 let balls = [];
 
 while (balls.length < 50) {
