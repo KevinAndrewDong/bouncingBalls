@@ -1,6 +1,6 @@
 //设置剩余小球
 
-const para = document.querySelector('p');
+const para = document.querySelector('.score');
 let count = 0;
 
 
@@ -80,10 +80,10 @@ Ball.prototype.collisionDetect = function() {
 
       if (distance <= this.size + balls[j].size) {
         balls[j].color = this.color = randomColor();
-        this.velX = -(this.velX);
-        this.velY = -(this.velY);
-        balls[j].velX = -(balls[j].velX);
-        balls[j].velY = -(balls[j].velY);
+        // this.velX = -(this.velX);
+        // this.velY = -(this.velY);
+        // balls[j].velX = -(balls[j].velX);
+        // balls[j].velY = -(balls[j].velY);
       }
     }
   }
@@ -123,7 +123,7 @@ EvilCircle.prototype.collisionDetect = function() {
 
       if (distance <= this.size + balls[j].size) {
         balls[j].exists = false;
-        this.size++;
+        this.size += 4;
         count--;
         para.textContent = '还有  ' + count + '  个小球';
       }
@@ -179,13 +179,13 @@ while (balls.length < 50) {
 }
 
 let evilCircle = new EvilCircle(random(0 , width), random(0 , height),
-    40, 40, true, 'white', 25);
+    40, 40, true, 'white', 40);
 evilCircle.setControls();
 
 
 //动起来
 function loop() {
-  ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
   ctx.fillRect(0, 0, width, height);
 
   for (let i = 0; i < balls.length; i++) {
