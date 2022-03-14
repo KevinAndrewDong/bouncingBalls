@@ -8,3 +8,4 @@
 - 定义loop() 函数: 使用fillRect()画矩形遮住视图，调用 draw() 和 update() 函数画出所有小球，使用 requestAnimationFrame() 方法每隔一小段时间再次运行一次这个函数
 - 定义setControls()方法，将一个 onkeydown 的事件监听器给 window 对象，键盘按下的时候移动大球
 - 创建一个变量para存储段落 .score 的引用，使用变量count显示更新的球数量,、在每次恶魔吃球时count减1。
+<img width="1254" alt="image" src="https://user-images.githubusercontent.com/20911103/158256970-ae711813-0990-498b-bb5d-b8407875fd8b.png">
